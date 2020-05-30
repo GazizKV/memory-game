@@ -103,11 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //flip your card
   function flipCard() {
+    if (cardsChosen.length === 2) (
+      return 0;
     var cardId = this.getAttribute('data-id')
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length ===2) {
+    if (cardsChosen.length === 2) {
       setTimeout(checkForMatch, 500)
     }
   }
